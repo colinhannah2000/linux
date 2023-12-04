@@ -1,0 +1,19 @@
+3 part:s
+* async = creates state machine
+* await = checkpoints or segmented parts to  state machine
+* Task = Bridge between the state machine and your code.
+
+Making a method async, propogates to all callers and (potentially) back to Main.
+
+public async Task<string> AAA()
+
+async keywords generates a state machine Object in the CLR, with local variables => members and a MoveNext which moves between await states.
+
+Each await Task call section in generated code in placed on a thread pool method and run. The code between each await section in our code checks if the background tasks are completed, hence they are like checkpoints.
+
+async void is bad. as Exception thrown isn't caught so entire process will crash. Use Task.Run around the task runso the exception goes nowhere and task just ends (or catch it).
+
+Task is an object (managed.) ValueTask is a value struct more memory efficient.
+
+Task.Run places thread in pool after use.
+Task.FromResult 

@@ -1,0 +1,12 @@
+Add new hard disks
+
+sudo fdisk -l
+sudo fdisk /dev/sda
+sudo mkfs.ext4 /dev/sda1
+sudo mkdir /ssd2T
+sudo mount /dev/sda1 /ssd2T
+sudo blkid
+sudo vim /etc/fstab
+(yes, you manually edit fstab!)
+
+sudo dd bs=4M if=/home/colin/Downloads/debian-12.0.0-amd64-netinst.iso of=/dev/sdc1 status=progress oflag=sync

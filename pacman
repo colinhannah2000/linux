@@ -1,0 +1,26 @@
+https://devhints.io/pacman
+
+`pacman -Syu <pkg>` Install (and update package list)
+
+`pacman -S <pkg>` Install only
+
+`pacman -Rsc <pkg>` Uninstall
+
+`pacman -Ss <keywords>` Search
+
+`pacman -Syu` Upgrade everything
+
+`pacman -Qe`  List explictly-installed packages
+
+`pacman -Ql <pkg>`  What files does this package have?
+
+`pacman -Qii <pkg>` List information on package
+
+`pacman -Qo <file>`  Who owns this file?
+
+`pacman -Qs <query>`  Search installed packages for keywords
+
+Upgrade Chrome:
+cd Downloads/google-chrome
+git pull; makepkg; 
+sudo pacman -U google-chrome-10...

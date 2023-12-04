@@ -1,0 +1,44 @@
+https://wiki.archlinux.org/title/docker
+
+https://hub.docker.com/
+
+**Install**
+sudo pacman -Syu docker-git
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo usermod -a -G docker colin
+
+docker version
+sudo docker info : should show no error and running containers.
+
+sudo docker images : shows local docker images
+
+sudo docker run ubuntu : run the ubuntu image, if it's not available download it.
+: you can now apt update, etc and changes will NOT be saved between runs.
+
+sudo docker ps -a
+
+sudo docker run -it ubuntu : run interactively.
+
+docker stop 100090a0de70
+
+--------
+https://docs.docker.com/get-started/02_our_app/
+https://wiki.alpinelinux.org/wiki/Alpine_Linux:Overview
+
+
+
+---------
+**Accessing** a running container:
+docker exec <container-id> cat /data.txt
+
+----------------------------------------
+**Volumes** - create  volumes that persist between container runs. Used to store application data.
+
+docker volume create todo-db : will create the volume
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started : mounts todo-db to /etc/todos and the code assumes '/etc/todos/todo.db' exists.
+
+Bind mounts - 
+
+
+

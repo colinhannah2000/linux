@@ -1,0 +1,6 @@
+modprobe fuse
+
+sudo mount -t cifs -o rw,vers=3.0,credentials=/root/.smbcredentials //fudsdic/Z /mnt/fudsdicZ
+
+rclone onedrive:
+https://itsfoss.com/use-onedrive-linux-rclone/
